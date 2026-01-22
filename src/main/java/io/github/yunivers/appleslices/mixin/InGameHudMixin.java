@@ -3,7 +3,6 @@ package io.github.yunivers.appleslices.mixin;
 import com.llamalad7.mixinextras.sugar.Local;
 import io.github.yunivers.appleslices.AppleSlices;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.MinecraftApplet;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.util.ScreenScaler;
@@ -16,7 +15,6 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 import java.util.Random;
 

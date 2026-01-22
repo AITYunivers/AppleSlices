@@ -1,19 +1,22 @@
 package io.github.yunivers.appleslices.mixin;
 
 import io.github.yunivers.appleslices.AppleSlices;
-import net.minecraft.world.World;
+import net.minecraft.client.Minecraft;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(World.class)
-public class WorldMixin
+@Mixin(Minecraft.class)
+public class MinecraftMixin
 {
     @Inject(
         method = "tick",
-        at = @At("HEAD")
+        at = @At(
+            value = "INVOKE",
+            target = "Lnet/minecraft/world/World;tick()V"
+        )
     )
     public void tickPulse(CallbackInfo ci)
     {
